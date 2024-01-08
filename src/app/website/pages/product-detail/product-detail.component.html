@@ -1,0 +1,15 @@
+<div>
+  <button (click)="goToBak()">back</button>
+  <div>
+    {{ product?.title }}
+  </div>
+  <div>
+    {{ product?.price }}
+  </div>
+  <div>
+    <img [src]="product?.images?.[0]" alt="" width="200" />
+  </div>
+  <div>
+    {{ product?.description }}
+  </div>
+</div>

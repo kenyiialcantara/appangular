@@ -1,0 +1,34 @@
+.products {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+//tablets
+@media screen and (min-width: 40em) and (max-width: 63.9em) {
+  .products {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 15px;
+  }
+}
+
+@media screen and (min-width: 64em) {
+  .products {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    grid-gap: 15px;
+  }
+}
+
+.productDetail {
+  display: none;
+  &.active {
+    position: fixed;
+    display: block;
+    top: 0;
+    right: 0;
+    bottom: 0;
+
+    background-color: white;
+  }
+}

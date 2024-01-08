@@ -1,0 +1,23 @@
+<div class="containerProduct">
+  <h2>{{ product.title | reverse }}</h2>
+  <a [routerLink]="['/product', product.id]">
+    <app-img
+      *ngIf="product.images[0]"
+      [changeImage]="product.images[0]"
+    ></app-img>
+  </a>
+  <div>
+    {{ product.price | currency }}
+  </div>
+  <div appHighlight>
+    {{ product.description }}
+  </div>
+  <div *ngIf="product.taxes">
+    {{ product.taxes | currency : "COP" }}
+  </div>
+  <button (click)="handleAddToCard()">add to card</button>
+  <button (click)="handleChangeColor(product.id)">ChangeColor</button>
+  <!-- <button (click)="handleShowDeatil()">Show detail</button> -->
+  <!-- <a routerLink="/home" [queryParams]="{ product: product.id }">Ver detalle</a> -->
+  <a routerLink="." [queryParams]="{ product: product.id }">Ver detalle</a>
+</div>

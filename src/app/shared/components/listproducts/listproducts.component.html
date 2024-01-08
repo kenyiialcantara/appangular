@@ -1,0 +1,39 @@
+<div>{{ today | date }}</div>
+<div>Productos agregados {{ cardProductd.length }}</div>
+<div>Total de precios: {{ total }}</div>
+<div>
+  <button (click)="handleShowProductDetail('3967835')">Detalle no found</button>
+  <div>
+    {{ statusDeatail }}
+  </div>
+</div>
+<div>
+  <button (click)="handleCreateProduct()">Create product</button>
+</div>
+<div class="products">
+  <app-product
+    [product]="product"
+    *ngFor="let product of products"
+    (productToAdd)="handleAddToCard($event)"
+    [id]="product.id"
+    (showProduct)="handleShowProductDetail($event)"
+  ></app-product>
+</div>
+
+<div
+  class="productDetail"
+  [class.active]="showDeail"
+  *ngIf="currentDetailProduct"
+>
+  <div>
+    <button (click)="toggleProductDetail()">close</button>
+    <div>{{ currentDetailProduct.title }}</div>
+    <img [src]="currentDetailProduct.images[0]" alt="" width="100" />
+  </div>
+  <div>
+    <button (click)="handleUpdateProduct()">edit</button>
+  </div>
+  <div>
+    <button (click)="handleDeleteProduct()">DeleteProduct</button>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+<div>
+  <!-- <button>Menu</button>
+  <button>All</button>
+  <button>Electronics</button> -->
+  <div></div>
+  <ul>
+    <li>
+      <a routerLinkActive="navActive" routerLink="home">All</a>
+      <a
+        routerLinkActive="navActive"
+        [routerLink]="['/category', category.id]"
+        *ngFor="let category of categories"
+        style="margin: 10px"
+      >
+        {{ category.name }}
+      </a>
+    </li>
+  </ul>
+
+  <!-- <div>Counter: {{ counter }}</div> -->
+</div>
