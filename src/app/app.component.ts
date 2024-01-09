@@ -105,3 +105,29 @@ export class AppComponent implements OnInit {
     this.router.navigate(['/home']);
   }
 }
+
+// import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
+// import { CommonModule } from '@angular/common';
+// import { RouterOutlet } from '@angular/router';
+
+// @Component({
+//   selector: 'app-root',
+//   standalone: true,
+//   imports: [CommonModule, RouterOutlet],
+//   templateUrl: './app.component.html',
+//   styleUrl: './app.component.css',
+// })
+// export class AppComponent implements AfterViewInit {
+//   @ViewChild('ta') ta: ElementRef | null = null;
+
+//   title = 'we-app';
+
+//   ngAfterViewInit(): void {
+//     this.hangeColor();
+//   }
+//   hangeColor() {
+//     if (this.ta) {
+//       this.ta.nativeElement.style.backgroundColor = 'green';
+//     }
+//   }
+// }
